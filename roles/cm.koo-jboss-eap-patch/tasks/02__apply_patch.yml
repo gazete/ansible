@@ -1,0 +1,11 @@
+---
+- name: Patch apply "{{ jboss_eap_patch_image_name }}"
+  shell: ./jboss-cli.sh --connect --controller={{ ansible_host }}:{{ jboss_eap_instance_cli_used_default_port }} --user={{ jboss_eap_instance_admin_user }} --password={{ jboss_eap_instance_admin_password }} --commands="patch apply {{ download_dir }}/{{ jboss_eap_patch_image_name }}"
+  args:
+      chdir: "{{ jboss_home }}/bin" 
+  when: jboss_eap_exists.stat.exists == true 
+
+#- name: Restart Jboss EAP 
+#  shell: ./jboss-cli.sh --connect --controller={{ ansible_host }}:{{ jboss_eap_instance_cli_used_default_port }} --user={{ jboss_eap_instance_admin_user }} --password={{ jboss_eap_instance_admin_password }} --commands="shutdown --restart=true"
+#  args:
+#      chdir: "{{ jboss_home }}/bin" 

@@ -1,0 +1,7 @@
+---
+- name: Ensure JBoss EAP is running"
+  hosts: was
+  become_user: root
+  tasks:
+   - service: name="jboss_default.service" state="started"  enabled="yes"
+

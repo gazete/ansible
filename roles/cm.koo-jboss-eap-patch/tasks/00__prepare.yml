@@ -1,0 +1,17 @@
+---
+
+- name: (00) Check "jboss_home" variable
+  fail: msg="This role requires 'jboss_home' to be set and non empty."
+  when: jboss_home is not defined or jboss_home == ''
+
+- name: (00) Check "jboss_eap_patch_image_name" variable
+  fail: msg="This role requires 'jboss_eap_patch_image_name' to be set and non empty."
+  when: jboss_eap_patch_image_name is not defined or jboss_eap_patch_image_name == ''
+
+- name: (00) Check "gi_dir" variable
+  fail: msg="This role requires 'gi_dir' to be set and non empty."
+  when: gi_dir is not defined or gi_dir == ''
+
+- name: (00) Check "download_dir" variable
+  fail: msg="This role requires 'download_dir' to be set and non empty."
+  when: download_dir is not defined or download_dir == ''

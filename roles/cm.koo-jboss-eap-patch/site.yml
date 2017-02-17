@@ -1,0 +1,4 @@
+---
+- hosts: was
+  roles:
+    - cm.koo-jboss-eap-patch

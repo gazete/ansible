@@ -1,0 +1,25 @@
+---
+jboss_home: /home/jboss/jboss-eap-6.4
+jboss_eap_patch_image_name: jboss-eap-6.4.9-patch.zip
+gi_dir: /root/images
+download_dir: /tmp
+
+
+# Red Hat JBoss EAP admin user name
+jboss_eap_instance_admin_user: redhat
+
+# Red Hat JBoss EAP admin password ("redhat123!") hashed according to HEX( MD5( username ':' realm ':' password))
+#jboss_eap_instance_admin_password: ba2caa9378fa898f1dea88804abe52b4
+jboss_eap_instance_admin_password: redhat123!
+
+# Port used only during updates using the CLI (port should be available)
+jboss_eap_instance_cli_default_port: 8888
+
+# Port used by the management interface
+jboss_eap_instance_cli_used_default_port: 9999
+
+jboss:
+  user: jboss
+  group: jboss
+  group_id: 500
+  user_home: "/home/jboss"

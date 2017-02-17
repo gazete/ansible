@@ -1,0 +1,5 @@
+---
+- name : Install JBoss Redhat Enterprise Platform 6.0
+  hosts: all
+  roles:
+    - { role: cm.koo-jboss-eap }

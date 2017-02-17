@@ -1,0 +1,14 @@
+---
+
+- name: "{{ jboss_eap_patch_image_name }} (01) Check existence of the JBoss EAP installation"
+  stat:
+    path: "{{ jboss_home + '/version.txt'}}"
+  register: jboss_eap_exists
+
+- name: "{{ jboss_eap_patch_image_name }} (01) Copy zipped JBoss EAP patch zip file"
+  copy:
+    src: "{{ jboss_eap_patch_image_name }}"
+    dest: "{{ download_dir + '/' + jboss_eap_patch_image_name }}"
+    owner: "{{ jboss.user }}"
+    group: "{{ jboss.group }}"
+  register: copy_zip_state

@@ -1,0 +1,14 @@
+---
+
+#### check varibale
+- include: 00__prepare.yml
+  become: true
+
+#### Copy JBoss installation binaries
+- include: 01__copy_and_unpack.yml
+  become: true
+
+#### Apply patch file
+- include: 02__apply_patch.yml 
+  become: true
+
